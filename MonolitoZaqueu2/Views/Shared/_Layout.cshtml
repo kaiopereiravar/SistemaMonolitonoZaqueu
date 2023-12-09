@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        btn-Login {
+            background: blue;
+            width: 60px;
+            height: 40px;
+            padding: 20px;
+        }
+        footer{
+            background:black;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Logo", "Home", "Home", new { area = "" }, new { @class = "navbar-brand" })      
+            <div class="collapse  d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Home", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("#Empresa", "Empresa", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Produtos", "Produtos", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("#Serviços", "Personalizados", "Personalizados", new { area = "" }, new { @class = "nav-link" })</li>
+                    <button class="btn-Login">@Html.ActionLink("#Login", "Login", "Login", new { area = "" }, new { @class = "" })</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content ">
+        @RenderBody()
+        <hr />
+        <footer >
+            <p>&copy; @DateTime.Now.Year - Kaio Vinicius</p>
+            <img src="~/Content/Images/🦆 icon _instagram_.png" />
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

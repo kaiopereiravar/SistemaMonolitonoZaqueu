@@ -1,0 +1,280 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título da Página</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background:#2F3037;
+        }
+        .section1 {
+            display: flex;
+            height: 800px;
+            background: orange;
+            align-items: end;
+            justify-content: left;
+            position: relative;
+            background-image: url("../../Content/Images/soldador.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .section1 h3{
+            color: white;
+            font-family: Kodchasan;
+            font-size: 45px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding-bottom:278px;
+            padding-left:70px;
+        }
+
+            .section1 button {
+                display: inline-flex;
+                padding: 15px 90px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                border-radius: 5px;
+                background: #895C04;
+                position: absolute;
+                left: 70px;
+                bottom: 175px;
+                color: white;
+                font-weight:bold;
+            }
+
+        .section2 {
+            display: flex;
+            height: 800px;
+            /*padding: 100px;*/
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            /*padding-left: 10%;*/
+            gap:3%;
+        }
+
+        .component1 {
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 19px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+
+        .botaoSaibaMais {
+            width: 170px;
+            height: 50px;
+            flex-shrink: 0;
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: bold;
+            line-height: normal;
+            background: #5D5D5E;
+            border-radius:7px;
+            border:solid 2px white;
+        }
+
+            .botaoSaibaMais a{
+                color:white;
+                text-decoration:none;
+            }
+
+            .container1 {
+                width: 30%;
+                height: 425px;
+                background: url("../../Content/Images/AdquiraMelhoresProdutos.jpg"), lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px black;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+        .container2 {
+            width: 30%;
+            height: 425px;
+            
+            background: url("../../Content/Images/CurriculoParaContratacao.jpg"), lightgray 50% / cover no-repeat;
+            box-shadow: 0px 4px 4px 0px black;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container3 {
+            width: 30%;
+            height: 425px;
+            background: url("../../Content/Images/ContrateServicos.jpg"), lightgray 50% / cover no-repeat;
+            box-shadow: 0px 4px 4px 0px black;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section3 {
+            display: flex;
+            height: 800px;
+            padding: 100px;
+            align-items: center;
+            justify-content: center;
+            flex-direction:column;
+            background: #26262C;
+        }
+
+        .text-white{
+            color:white;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .inputs input {
+                color: white;
+                border-radius: 10px;
+                border: 3px solid #895C04;
+                background: #26262C;
+                width: 652px;
+                height: 59px;
+                padding: 12px 396px 12px 30px;
+            }
+
+        .btn-entrarEmContato {
+            width: 652px;
+            height: 59px;
+            border-radius: 10px;
+            background: #895C04;
+        }
+
+        .section4 {
+            display: flex;
+            height: 436px;
+            justify-content: center;
+            /*align-items: flex-start;*/ 
+            padding: 97px 0px 0 10%;
+        }
+
+        .infoFooters {
+            width: 443px;
+            color:white;
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+            /*align-items: flex-start;*/
+            margin: 20px;
+            /*padding-left:10%;*/
+            
+            
+        }
+
+            .infoFooters h1 {
+                margin: 5px 0; 
+            }
+
+            .infoFooters ul li a {
+                text-decoration: none;
+                color:white;
+            }
+        
+
+
+
+    </style>
+</head>
+
+<body>
+    <section class="section1">
+        <h3>Os melhores produtos no melhor lugar</h3>
+        <button>Agendar serviço</button>
+    </section>
+    <section class="section2">
+        <div class="container1">
+            @*<h3>Produtos</h3>*@
+            <div class="component1">
+                <h3>Adquira aqui os melhores produtos</h3>
+                <button class="botaoSaibaMais"><a href="@Url.Action("Produtos","Home")">Saiba mais</a></button>
+                <asp:LinkButton runat="server">LinkButton</asp:LinkButton>
+            </div>
+        </div>
+
+        <div class="container2">
+            @*<h3>Serviços</h3>*@
+            <div class="component1">
+                <h3>CONTRATE NOSSOS SERVIÇOS</h3>
+                <button class="botaoSaibaMais">Saiba mais</button>
+            </div>
+        </div>
+
+        <div class="container3">
+            @*<h3>Curriculos</h3>*@
+            <div class="component1">
+                <h3>ENVIE-NOS SEU CURRICULO PARA CONTRATAÇÃO</h3>
+                <button class="botaoSaibaMais">Saiba mais</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section3">
+        <h1 class="text-white">entre em contato conosco</h1>
+        <h4 class="text-white">Seja para solicitar informações sobre nossos produtos, discutir colaborações ou para qualquer outra consulta, estamos à disposição para ajudar.</h4>
+        <div class="inputs">
+            <input placeholder="Como devemos chamar você?" type="text"/>
+            <input placeholder="Seu email para contato" type="text"/>
+            <input placeholder="Telefone para contato" type="text"/>
+            <input placeholder="Descreva uma brave descriçao sobre seu projeto ou necessidade" type="text"/>
+            <button class="btn-entrarEmContato">Entrar em Contato</button>
+        </div>
+    </section>
+
+    <section class="section4">
+        <div class="infoFooters">
+            <h1>Sobre nós</h1>
+            <p>Somos uma empresa dedicada à excelência na fabricação de escadas e peças para manutenção de aeronaves, impulsionando a indústria com precisão e confiabilidade. </p>
+        </div>
+
+        <div class="infoFooters">
+            <h1>Menu Rapido</h1>
+            <ul>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="~/Views/Home/Produtos.cshtml">Produtos</a></li>
+                <li><a href="#">Customizados</a></li>
+                <li><a href="#">Curriculos</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Cadastro</a></li>
+
+            </ul>
+        </div>
+
+        <div class="infoFooters">
+            <h2>Endereço</h2>
+        </div>
+    </section>
+</body>
+
+</html>
+
+
